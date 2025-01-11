@@ -1,5 +1,11 @@
 FROM openjdk:17-jdk-slim
 
+# Install required font libraries
+RUN apt-get update && apt-get install -y \
+    fontconfig \
+    libfreetype6 \
+    && apt-get clean
+	
 # Set working directory
 WORKDIR /app
 
